@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        multiplication_exchange:
+          destination: multiplication_exchange
+          content-type: application/json
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+    properties:
+      hibernate:
+        show_sql:true       
+    
+  datasource:
+    url: jdbc:h2:file:~/social-multiplication
+    
+#multiplication:
+#   exchange: multiplication_exchange
+#   solved:
+#      key: multiplication.solved
